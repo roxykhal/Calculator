@@ -89,6 +89,8 @@ public class Calculator implements ActionListener {
         panel.setLayout(new GridLayout(4, 4, 10, 10));
         panel.setBackground(Color.PINK);
 
+        //add buttons to the UI in order
+
         panel.add(numberButtons[1]);
         panel.add(numberButtons[2]);
         panel.add(numberButtons[3]);
@@ -126,7 +128,20 @@ public class Calculator implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+        
+        //The getSource() method gets the button that was clicked (in this case, numberButtons[i]).The code then checks if the clicked button (e.getSource()) matches one of the buttons in the numberButtons array (numberButtons[i]), and if so, it appends the corresponding number to the text field.
+
+        for(int i = 0; i<10; i++) {
+            if(e.getSource() == numberButtons[i]) {
+                //
+                textfield.setText(textfield.getText().concat(String.valueOf(i)));;
+            }
+        }
+
+        //functionality for division button
+        if(e.getSource()==decButton) {
+            textfield.setText(textfield.getText().concat("."));
+        }
       
     }
 }
