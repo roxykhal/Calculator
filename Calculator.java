@@ -41,7 +41,7 @@ public class Calculator implements ActionListener {
         //cannot edit the textbox unless buttons are pressed
         textfield.setEditable(false);
 
-        //buttons methods
+        //function buttons methods
         addButton = new JButton("+");
         subButton = new JButton("-");
         multButton = new JButton("*");
@@ -60,16 +60,23 @@ public class Calculator implements ActionListener {
         functionButtons[6] = delButton;
         functionButtons[7] = clrButton;
 
-        //for loop to iterate through J buttons 
+        //for loop to iterate through function Jbuttons 
         for(int i = 0; i < 8; i++) {
             functionButtons[i].addActionListener(this);
             functionButtons[i].setFont(myFont);
             functionButtons[i].setFocusable(false);
 
+        }
 
+         //for loop to iterate through number Jbuttons 
+
+        for(int i = 0; i < 10; i++) {
+          numberButtons[i] = new JButton(String.valueOf(i));
+          numberButtons[i].addActionListener(this);
+          numberButtons[i].setFont(myFont);
+          numberButtons[i].setFocusable(false);
 
         }
-        
 
 
         frame.add(textfield);
