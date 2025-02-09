@@ -17,7 +17,7 @@ public class Calculator implements ActionListener {
     //Panel to hold all of the seperate buttons
     JPanel panel;
 
-    //declare a font to reusejava
+    //declare a font to use java
     Font myFont = new Font("Ink Free", Font.BOLD,30);
 
     //num1 and 2 stores values inputted by user, initialised to 0
@@ -38,6 +38,9 @@ public class Calculator implements ActionListener {
         textfield = new JTextField();
         textfield.setBounds(50, 25, 300, 50);
         textfield.setFont(myFont);
+
+        //cannot edit the textbox unless buttons are pressed
+        textfield.setEditable(false);
 
         frame.add(textfield);
         frame.setVisible(true);
